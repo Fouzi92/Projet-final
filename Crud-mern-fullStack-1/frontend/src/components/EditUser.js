@@ -1,24 +1,23 @@
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditUser = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [gender, setGender] = useState("Male");
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
+    const getUserById = async () => {
+      const response = await axios.get(`http://localhost:5000/users/${id}`);
+      setName(response.data.name);
+      setEmail(response.data.email);
+      setGender(response.data.gender);
+    };
     getUserById();
-  }, []);
-
-  const getUserById = async () => {
-    const response = await axios.get(`http://localhost:5000/users/${id}`);
-    setName(response.data.name);
-    setEmail(response.data.email);
-    setGender(response.data.gender);
-  };
+  }, [id]);
 
   const updateUser = async (e) => {
     e.preventDefault();
@@ -35,7 +34,7 @@ const EditUser = () => {
   };
 
   return (
-    <div className="columns">
+    <div className="columns mt-5">
       <div className="column is-half">
         <form onSubmit={updateUser}>
           <div className="field">
