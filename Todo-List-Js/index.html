@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shorcut icon" href="./Media/todo-list-logos.png" />
+    <title>Todo List JavaScript</title>
+  </head>
+  <body>
+    <header>
+      <h1>Todo List JavaScript</h1>
+      <form id="new-task-form">
+        <input
+          type="text"
+          id="new-task-input"
+          placeholder="Tu dois faire quoi ?"
+        />
+        <input type="submit" id="new-task-submit" value="Ajouter une tâche" />
+      </form>
+    </header>
+
+    <main>
+      <section class="task-list">
+        <h2>Tâche</h2>
+        <div id="tasks">
+          <div class="task">
+            <div class="content">
+              <input type="text" class="text" value="à faire" readonly />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
