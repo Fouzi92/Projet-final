@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+/* font-family: 'Rancho', cursive; */
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+/* font-family: 'VT323', monospace; */
+
+:root {
+    --dark: #374151;
+    --darker: #1f2937;
+    --darkest: #111827;
+    --gray:#6b7280;
+    --light: #eee;
+    --pink: #ec4899;
+    --purple: #8b5cf6;
+    --color1: #faff00;
+    --color2: #faebd77d;
+    --color3: #1818067a;
+}
+

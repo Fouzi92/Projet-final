@@ -8,31 +8,92 @@
     <link rel="shorcut icon" href="./Media/todo-list-logos.png" />
     <title>Todo List JavaScript</title>
   </head>
-  <body>
-    <header>
-      <h1>Todo List JavaScript</h1>
-      <form id="new-task-form">
-        <input
-          type="text"
-          id="new-task-input"
-          placeholder="Tu dois faire quoi ?"
-        />
-        <input type="submit" id="new-task-submit" value="Ajouter une tâche" />
-      </form>
-    </header>
 
-    <main>
-      <section class="task-list">
-        <h2>Tâche</h2>
-        <div id="tasks">
-          <div class="task">
-            <div class="content">
-              <input type="text" class="text" value="à faire" readonly />
+  <body>
+    <main class="app">
+      <section class="greeting">
+        <h2 class="title">
+          Quoi de neuf gros ?
+          <input type="text" id="name" placeholder="Ton nom ?" />
+        </h2>
+      </section>
+
+      <section class="create-todo">
+        <h3>Créer une tâche</h3>
+        <form id="new-todo-form">
+          <h4>Les trucs à faire</h4>
+          <input
+            type="text"
+            name="content"
+            id="content"
+            placeholder=" à remplir autre"
+          />
+          <h4>Pick a category</h4>
+          <div class="options">
+            <label>
+              <input
+                type="radio"
+                name="category"
+                id="category"
+                value="business"
+              />
+              <span class="bubble business"></span>
+              <div>business</div>
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="category"
+                id="category2"
+                value="personal"
+              />
+              <span class="bubble personal"></span>
+              <div>personnel</div>
+            </label>
+          </div>
+
+          <input type="submit" value="add todo" />
+        </form>
+      </section>
+
+      <section class="todo-list">
+        <h3>Liste des Taches</h3>
+        <div class="list" id="todo-list">
+          <div class="todo-item">
+            <label>
+              <input type="checkbox" />
+              <span class="bubble business"></span>
+            </label>
+
+            <div class="todo-content">
+              <input type="text" value="Faire ..." readonly />
             </div>
           </div>
+          <div class="actions">
+            <button class="edit">Éditer</button>
+            <button class="delete">Supprimé</button>
+          </div>
         </div>
+
+        <div class="todo-item">
+            <label>
+              <input type="checkbox" />
+              <span class="bubble personal"></span>
+            </label>
+
+            <div class="todo-content">
+              <input type="text" value="Faire faire faire" readonly />
+            </div>
+          </div>
+          <div class="actions">
+            <button class="edit">Éditer</button>
+            <button class="delete">Supprimé</button>
+          </div>
+      </div>
       </section>
     </main>
+
     <script src="./script.js"></script>
   </body>
 </html>
