@@ -52,11 +52,20 @@ const UserList = () => {
                   >
                     Éditer
                   </Link>
+
                   <button
-                    onClick={() => deleteUser(user._id)}
                     className="button is-danger is-small"
+                    onClick={() => {
+                      if (
+                        window.confirm(
+                          "Êtes-vous sûr de vouloir supprimer cet utilisateur ?"
+                        )
+                      ) {
+                        deleteUser(user._id);
+                      }
+                    }}
                   >
-                    Effacer
+                    effacer
                   </button>
                 </td>
               </tr>
